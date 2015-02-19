@@ -14,6 +14,6 @@ Bootstrap 3.2
 
 
 
-[![Circle CI](https://circleci.com/gh/egrebenyuk/kate_library/tree/master.svg?style=svg)](https://circleci.com/gh/egrebenyuk/kate_library/tree/master)
+[![Circle CI](https://circleci.com/gh/egrebenyuk/kate_travel/tree/master.svg?style=svg)](https://circleci.com/gh/egrebenyuk/kate_travel/tree/master)
 
-[![Code Climate](https://codeclimate.com/github/egrebenyuk/kate_library/badges/gpa.svg)](https://codeclimate.com/github/egrebenyuk/kate_library)
+[![Code Climate](https://codeclimate.com/github/egrebenyuk/kate_travel/badges/gpa.svg)](https://codeclimate.com/github/egrebenyuk/kate_travel)
