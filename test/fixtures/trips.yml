@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyText
+  id: 1
+  name: Spain
+  description: Spain, officially the Kingdom of Spain is a sovereign state located on the Iberian Peninsula in southwestern Europe.
 
 two:
-  name: MyString
-  description: MyText
+  id: 2
+  name: France
+  description: France, officially the French Republic, is a unitary sovereign state comprising territory in western Europe and several overseas regions and territories.

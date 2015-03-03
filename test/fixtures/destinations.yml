@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyText
+  id: 1
+  name: Jewish Heritage in Spain
+  description: In an effort to recover the cultural heritage of Jewish Spain, the cities of Barcelona, Girona, Besalu, Cordoba, Caceres, Jaen, Hervas, Ribadavia, Segovia, Toledo, Tudela and more have created a network "The Sephardic Way", which aims to locate and revive the lost Spanish Jewish heritage.
+  trip_id: 1
 
 two:
-  name: MyString
-  description: MyText
+  id: 2
+  name: Castles of great Spain Tour
+  description: The greatest concentration of Spain’s castles are found in Castilla (which is now know as Castilla y Leon), in central Spain.
+  trip_id: 1

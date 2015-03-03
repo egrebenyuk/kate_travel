@@ -1,5 +1,6 @@
 class DestinationsController < ApplicationController
   before_action :set_destination, only: [:show, :edit, :update, :destroy]
+  before_action :set_trip, only: [:show, :new, :edit, :create]
 
   # GET /destinations
   # GET /destinations.json
@@ -10,32 +11,28 @@ class DestinationsController < ApplicationController
   # GET /destinations/1
   # GET /destinations/1.json
   def show
-    @trip = Trip.find(params[:trip_id])
   end
 
   # GET /destinations/new
   def new
-    @trip = Trip.find(params[:trip_id])
     @destination = Destination.new
   end
 
   # GET /destinations/1/edit
   def edit
-    @trip = Trip.find(params[:trip_id])
   end
 
   # POST /destinations
   # POST /destinations.json
   def create
-    @trip = Trip.find(params[:trip_id])
     @destination = @trip.destinations.new(destination_params)
 
     respond_to do |format|
       if @destination.save
-        format.html { redirect_to trip_destination_path([@trip, @destination]), notice: 'Destination was successfully created.' }
+        format.html { redirect_to trip_destination_path(@trip, @destination), notice: 'Destination was successfully created.' }
         format.json { render :show, status: :created, location: @destination }
       else
-        format.html { render :new }
+        #format.html { render :new }
         format.json { render json: @destination.errors, status: :unprocessable_entity }
       end
     end
@@ -45,9 +42,10 @@ class DestinationsController < ApplicationController
   # PATCH/PUT /destinations/1.json
   def update
     @trip = @destination.trip
+
     respond_to do |format|
       if @destination.update(destination_params)
-        format.html { redirect_to trip_destination_path([@destination.trip, @destination]), notice: 'Destination was successfully updated.' }
+        format.html { redirect_to trip_destination_path(@trip, @destination), notice: 'Destination was successfully updated.' }
         format.json { render :show, status: :ok, location: @destination }
       else
         format.html { render :edit }
@@ -74,6 +72,10 @@ class DestinationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def destination_params
-      params.require(:destination).permit(:name, :description)
+      params.require(:destination).permit(:name, :description, :trip_id)
+    end
+
+    def set_trip
+      @trip = Trip.find(params[:trip_id])
     end
 end
