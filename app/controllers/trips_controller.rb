@@ -1,6 +1,8 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :owns_trip, only: [:edit, :update, :destroy]
   # GET /trips
   # GET /trips.json
   def index
@@ -25,6 +27,7 @@ class TripsController < ApplicationController
   # POST /trips.json
   def create
     @trip = Trip.new(trip_params)
+    @trip.user = current_user
 
     respond_to do |format|
       if @trip.save
@@ -70,5 +73,11 @@ class TripsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def trip_params
       params.require(:trip).permit(:name, :description)
+    end
+
+    def owns_trip
+      if !user_signed_in? || current_user != Trip.find(params[:id]).user
+        redirect_to trips_path, error: "You can't do that!"
+      end
     end
 end
