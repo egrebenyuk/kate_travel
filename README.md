@@ -12,6 +12,7 @@ PostgreSQL 9.4.0
 
 Bootstrap 3.2
 
+Devise 3.4.1
 
 
 [![Circle CI](https://circleci.com/gh/egrebenyuk/kate_travel/tree/master.svg?style=svg)](https://circleci.com/gh/egrebenyuk/kate_travel/tree/master)
