@@ -14,7 +14,3 @@ Bootstrap 3.2
 
 Devise 3.4.1
 
-
-[![Circle CI](https://circleci.com/gh/egrebenyuk/kate_travel/tree/master.svg?style=svg)](https://circleci.com/gh/egrebenyuk/kate_travel/tree/master)
-
-[![Code Climate](https://codeclimate.com/github/egrebenyuk/kate_travel/badges/gpa.svg)](https://codeclimate.com/github/egrebenyuk/kate_travel)
